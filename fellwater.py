@@ -1,6 +1,6 @@
 import random
 import string
-import time as t
+
 
 
 # generates a random lookup table from all sets of punctuation, digits, ascii_letters and whitespace.
@@ -71,10 +71,10 @@ def decrypt(ciphertext, permutation_dict, permutation_length):
                 plaintext += letter
     return plaintext
 
+
 # makes two lists. shuffles the index list
 # take the input_string_list and create a new list with the characters in the order of the shuffled index list
 def scramble_string_input(input_string):
-
 
     input_string_list = list(input_string)
     scrambled_index_list = list(range(len(input_string_list)))
@@ -122,25 +122,15 @@ def read_and_join_file(file_name):
     return input_string
 
 
+# Example usage round trip
 
+# input_data = "This is an example of data to encrypt."
+#
+# x = generate_permutation_session(input_data, 16)
+# xx = scramble_string_input(input_data)
+# y = encrypt(xx[0], x)
+#
+# z = decrypt(y, x, 16)
+# zz = unscramble_string_input(z, xx[1])
+# print(zz)
 
-
-input_data = "passwor ds!@#$%^&*() l;kalsdaoisoipjjoi jalkkllks n nllkn lnlasln l;asd nasl;dnl;n1q2d iodi od n23ndjkl 2o"
-input_list = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " ", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "]", "{", "}", ";", ":", "'", '"', ",", ".", "<", ">", "/", "?", "`", "~", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
-
-
-
-
-for i in range(100000):
-    # x = generate_permutation_session(input_list, 16)
-    # xx = scramble_string_input(input_data)
-    # y = encrypt(xx[0], x)
-    #
-    # z = decrypt(y, x, 16)
-    # zz = unscramble_string_input(z, xx[1])
-    #
-    # if input_data != zz:
-    #     print("Failed test!")
-    #     break
-    zz = generate_salt(32)
-    print(zz)
